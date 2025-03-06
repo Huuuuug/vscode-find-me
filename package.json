@@ -1,0 +1,82 @@
+{
+  "name": "find-me",
+  "displayName": "Find Me",
+  "description": "Identify you current working folder in status bar",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "fine-me.config",
+        "category": "Find Me",
+        "title": "Config the name and color!"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Project Name In StatusBar extension configuration",
+      "properties": {
+        "fine-me.colorful": {
+          "type": "boolean",
+          "default": true,
+          "description": "Use color"
+        },
+        "fine-me.color": {
+          "type": "string",
+          "default": "",
+          "description": "The color of status text. When not defined, a random color will be used based on the project name"
+        },
+        "fine-me.align": {
+          "type": "string",
+          "enum": [
+            "left",
+            "right"
+          ],
+          "default": "left",
+          "description": "Defines The alignment of the label, requires restart of vscode"
+        },
+        "fine-me.alignPriority": {
+          "type": "number",
+          "default": 100000,
+          "description": "Defines The priority of the label, Higher values mean the label should be shown more to the left or right,requires restart of vscode"
+        },
+        "fine-me.projectSetting": {
+          "type": "object",
+          "default": {},
+          "description": "Project preference"
+        },
+        "fine-me.textTransform": {
+          "type": "string",
+          "enum": [
+            "none",
+            "capitalize",
+            "uppercase",
+            "lowercase"
+          ],
+          "default": "capitalize",
+          "description": "Defines project name text style inside template"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.97.0",
+    "@vscode/vsce": "^3.2.2",
+    "eslint": "^9.19.0",
+    "typescript": "^5.7.3"
+  }
+}
