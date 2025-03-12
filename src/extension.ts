@@ -38,7 +38,7 @@ function getProjectPath(): string | undefined {
 
 function getAlign(): StatusBarAlignment {
   const align: string = workspace
-    .getConfiguration("where-am-i")
+    .getConfiguration("fine-me")
     .get("align") as string;
   switch (align) {
     case "left":
@@ -52,27 +52,25 @@ function getAlign(): StatusBarAlignment {
 
 function getProjectSetting(): ProjectSetting {
   return workspace
-    .getConfiguration("where-am-i")
+    .getConfiguration("fine-me")
     .get("projectSetting") as ProjectSetting;
 }
 
 function getColorful(): boolean {
-  return workspace.getConfiguration("where-am-i").get("colorful") as boolean;
+  return workspace.getConfiguration("fine-me").get("colorful") as boolean;
 }
 
 function getColor(): string {
-  return workspace.getConfiguration("where-am-i").get("color") as string;
+  return workspace.getConfiguration("fine-me").get("color") as string;
 }
 
 function getTextTransform(): string {
-  return workspace
-    .getConfiguration("where-am-i")
-    .get("textTransform") as string;
+  return workspace.getConfiguration("fine-me").get("textTransform") as string;
 }
 
 function alignPriority(): number {
   return +(workspace
-    .getConfiguration("where-am-i")
+    .getConfiguration("fine-me")
     .get("alignPriority") as string);
 }
 
@@ -129,6 +127,7 @@ export function activate(context: ExtensionContext) {
 
   function updateStatusBarItem() {
     projectPath = getProjectPath();
+    console.log("projectPath", projectPath);
     if (!projectPath) {
       statusBarItem.text = "";
       statusBarItem.hide();
@@ -146,6 +145,11 @@ export function activate(context: ExtensionContext) {
   }
 
   function updateSubscription() {
+    console.log(
+      "onDidChangeWorkspaceFoldersDisposable",
+      onDidChangeWorkspaceFoldersDisposable
+    );
+
     if (!onDidChangeWorkspaceFoldersDisposable) {
       onDidChangeWorkspaceFoldersDisposable =
         workspace.onDidChangeWorkspaceFolders(() => {

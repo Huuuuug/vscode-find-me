@@ -6,6 +6,12 @@
   "engines": {
     "vscode": "^1.97.0"
   },
+  "icon": "icon/logo.png",
+  "publisher": "github.com/Huuuuug",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Huuuuug/vscode-find-me.git" 
+  },
   "categories": [
     "Other"
   ],
@@ -69,7 +75,12 @@
     }
   },
   "scripts": {
-    "lint": "eslint src"
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src",
+    "package": "pnpm vsce package --no-dependencies",
+    "publish": "pnpm vsce publish --no-dependencies"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
