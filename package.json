@@ -7,7 +7,7 @@
     "vscode": "^1.97.0"
   },
   "icon": "icon/logo.png",
-  "publisher": "github.com/Huuuuug",
+  "publisher": "ganhu",
   "repository": {
     "type": "git",
     "url": "https://github.com/Huuuuug/vscode-find-me.git" 
