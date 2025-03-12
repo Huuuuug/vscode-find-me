@@ -1,5 +1,5 @@
 {
-  "name": "find-me",
+  "name": "vscode-find-me",
   "displayName": "Find Me",
   "description": "Identify you current working folder in status bar",
   "version": "0.0.1",
