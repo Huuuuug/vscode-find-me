@@ -10,7 +10,7 @@
   "publisher": "ganhu",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Huuuuug/vscode-find-me.git" 
+    "url": "https://github.com/Huuuuug/vscode-find-me.git"
   },
   "categories": [
     "Other"
@@ -83,11 +83,12 @@
     "publish": "pnpm vsce publish --no-dependencies"
   },
   "devDependencies": {
+    "@ganghu/eslint-config": "^1.0.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
     "@types/vscode": "^1.97.0",
     "@vscode/vsce": "^3.2.2",
-    "eslint": "^9.19.0",
+    "eslint": "^9.22.0",
     "typescript": "^5.7.3"
   }
 }

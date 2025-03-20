@@ -4,9 +4,10 @@
     "target": "ES2022",
     "lib": ["ESNext"],
     "sourceMap": true,
-    "rootDir": "src",
     "strict": true,
     "outDir": "out",
     "esModuleInterop": true
-  }
+  },
+  "include": ["**/*.ts"],
+  "exclude": []
 }
