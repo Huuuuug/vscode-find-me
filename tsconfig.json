@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "module": "CommonJS",
-    "target": "ES2022",
+    "moduleResolution": "bundler",
+    "target": "ESNext",
+    "module": "ESNext",
     "lib": ["ESNext"],
     "sourceMap": true,
     "strict": true,
